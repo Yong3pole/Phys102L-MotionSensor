@@ -1,8 +1,8 @@
-#define PIR_SENSOR_PIN 23  // GPIO for PIR sensor (SR505)
-#define LED_PIN 27         // GPIO for LED
+#define PIR_SENSOR_PIN 35  // GPIO for PIR sensor (SR505)
+#define LED_PIN 32         // GPIO for LED
 #define LDR_PIN 34         // GPIO for LDR module (analog input pin)
 
-int ldrThreshold = 800;  // Define a threshold for the LDR to detect low light (adjust as needed)
+int ldrThreshold = 1200;  // Define a threshold for the LDR to detect low light (adjust as needed)
 
 int ledBrightness = 0;  // Variable to store LED brightness (0 to 255)
 
@@ -28,7 +28,7 @@ void loop() {
       ledBrightness = 255;  // Full brightness when motion is detected
     } else {  // No motion
       Serial.println("No Motion. LED DIM");
-      ledBrightness = 10;  // Dim the LED when no motion is detected
+      ledBrightness = 40;  // Dim the LED when no motion is detected
     }
   } else {  // It's bright (no need for motion detection or LED)
     Serial.println("It's bright, LED OFF");
